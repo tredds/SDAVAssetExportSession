@@ -38,6 +38,12 @@
 @property (nonatomic, weak) id<SDAVAssetExportSessionDelegate> delegate;
 
 /**
+ * The desired framerate
+ */
+@property(nonatomic, copy, nullable) NSNumber *framerate;
+
+
+/**
  * The asset with which the export session was initialized.
  */
 @property (nonatomic, strong, readonly) AVAsset *asset;

@@ -282,8 +282,11 @@
     // get the frame rate from videoSettings, if not set then try to get it from the video track,
     // if not set (mainly when asset is AVComposition) then use the default frame rate of 30
     float trackFrameRate = 0;
-    if (self.videoSettings)
-    {
+    
+    if (self.framerate != nil) {
+        trackFrameRate = self.framerate.floatValue;
+    }
+    else if (self.videoSettings) {
         NSDictionary *videoCompressionProperties = [self.videoSettings objectForKey:AVVideoCompressionPropertiesKey];
         if (videoCompressionProperties)
         {
